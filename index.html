@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ABDUL DESIGN STUDIO | Premium SketchUp 3D Models & Plugins</title>
+    <style>
+        :root {
+            --primary: #2a4365;
+            --secondary: #f6ad55;
+            --dark: #1a202c;
+            --light: #f7fafc;
+            --accent: #ecc94b;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: var(--light);
+            color: var(--dark);
+            overflow-x: hidden;
+        }
+        
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--dark));
+            color: white;
+            padding: 1rem 2rem;
+            position: fixed;
+            width: 100%;
+            z-index: 100;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--accent);
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo span {
+            color: white;
+            margin-left: 0.5rem;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+        
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+        }
+        
+        .nav-links a:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+            color: var(--accent);
+        }
+        
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://scontent.fvga2-2.fna.fbcdn.net/v/t39.30808-6/339315203_588462386674640_2619479133105466087_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=2285d6&_nc_ohc=7AF2cxmFVKkQ7kNvwFmhNMa&_nc_oc=AdmWWV8QLJDcW_5omy_NZrBR8G8YHKRAMsZqTCo13hdp9P3S6kobYv-k1Tj-ucIYKdLYSKIYm3kSONHtOzRMzxnd&_nc_zt=23&_nc_ht=scontent.fvga2-2.fna&_nc_gid=u9P5B2SHuUIkFYr-Y3FcgQ&oh=00_AfR1dgqaU2Fs41hu7CFXy0kMKsAAJIj2gc90NJ32q1UzOQ&oe=688EE11D');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            padding: 0 2rem;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--secondary);
+            color: var(--dark);
+            padding: 0.8rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+        
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+        
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--secondary);
+            color: var(--secondary);
+            margin-left: 1rem;
+        }
+        
+        .btn-outline:hover {
+            background-color: var(--secondary);
+            color: var(--dark);
+        }
+        
+        .models-section {
+            padding: 5rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--primary);
+            display: inline-block;
+        }
+        
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background-color: var(--secondary);
+            border-radius: 2px;
+        }
+        
+        .models-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .model-card {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .model-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+        
+        .model-img {
+            height: 200px;
+            overflow: hidden;
+        }
+        
+        .model-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .model-card:hover .model-img img {
+            transform: scale(1.1);
+        }
+        
+        .model-info {
+            padding: 1.5rem;
+        }
+        
+        .model-info h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            color: var(--primary);
+        }
+        
+        .model-info p {
+            color: #666;
+            margin-bottom: 1rem;
+            line-height: 1.5;
+        }
+        
+        .model-actions {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .plugins-section {
+            background-color: var(--primary);
+            padding: 5rem 2rem;
+            color: white;
+        }
+        
+        .plugins-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .plugins-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .plugin-card {
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .plugin-card:hover {
+            transform: translateY(-10px);
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+        
+        .plugin-icon {
+            background-color: var(--secondary);
+            color: var(--dark);
+            font-size: 2rem;
+            padding: 1.5rem;
+            text-align: center;
+        }
+        
+        .plugin-info {
+            padding: 1.5rem;
+        }
+        
+        .plugin-info h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            color: var(--accent);
+        }
+        
+        .plugin-info p {
+            margin-bottom: 1rem;
+            line-height: 1.5;
+            opacity: 0.9;
+        }
+        
+        .about-section {
+            padding: 5rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            gap: 3rem;
+        }
+        
+        .about-img {
+            flex: 1;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .about-img img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        .about-content {
+            flex: 1;
+        }
+        
+        .about-content h2 {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+        }
+        
+        .about-content p {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+        
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            text-align: left;
+        }
+        
+        .footer-column h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1.5rem;
+            color: var(--accent);
+        }
+        
+        .footer-column ul {
+            list-style: none;
+        }
+        
+        .footer-column ul li {
+            margin-bottom: 0.8rem;
+        }
+        
+        .footer-column ul li a {
+            color: #ccc;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .footer-column ul li a:hover {
+            color: var(--secondary);
+            padding-left: 5px;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: white;
+            transition: all 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            background-color: var(--secondary);
+            color: var(--dark);
+            transform: translateY(-3px);
+        }
+        
+        .copyright {
+            margin-top: 3rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #aaa;
+            font-size: 0.9rem;
+        }
+        
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .about-section {
+                flex-direction: column;
+            }
+            
+            .about-img, .about-content {
+                flex: none;
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <span>ABDUL</span> DESIGN STUDIO
+            </div>
+            <div class="nav-links">
+                <a href="#models">3D Models</a>
+                <a href="#plugins">Plugins</a>
+                <a href="#about">About</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </nav>
+    </header>
+    
+    <section class="hero">
+        <h1>Premium SketchUp 3D Models & Plugins</h1>
+        <p>Enhance your 3D design workflow with our high-quality SketchUp models and custom plugins created by Abdul Design Studio. Download ready-to-use assets for your next project.</p>
+        <div>
+            <a href="#models" class="btn">Explore Models</a>
+            <a href="#plugins" class="btn btn-outline">Discover Plugins</a>
+        </div>
+    </section>
+    
+    <section class="models-section" id="models">
+        <div class="section-title">
+            <h2>Featured 3D Models</h2>
+        </div>
+        <div class="models-grid">
+            <div class="model-card">
+                <div class="model-img">
+                    <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Modern House Model">
+                </div>
+                <div class="model-info">
+                    <h3>Modern Villa Collection</h3>
+                    <p>Complete set of modern villa designs with detailed interiors and landscaping.</p>
+                    <div class="model-actions">
+                        <a href="#" class="btn">Download</a>
+                        <span>2.4 GB</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="model-card">
+                <div class="model-img">
+                    <img src="https://images.unsplash.com/photo-1493809842364-78817add7ffb?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Furniture Model">
+                </div>
+                <div class="model-info">
+                    <h3>Luxury Furniture Pack</h3>
+                    <p>50+ high-end furniture models for living rooms, bedrooms and offices.</p>
+                    <div class="model-actions">
+                        <a href="#" class="btn">Download</a>
+                        <span>1.2 GB</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="model-card">
+                <div class="model-img">
+                    <img src="https://images.unsplash.com/photo-1554469384-e58fac16e23a?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Office Model">
+                </div>
+                <div class="model-info">
+                    <h3>Corporate Office Set</h3>
+                    <p>Complete modern office setup with workstations, meeting rooms and lounge.</p>
+                    <div class="model-actions">
+                        <a href="#" class="btn">Download</a>
+                        <span>1.8 GB</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="model-card">
+                <div class="model-img">
+                    <img src="https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Kitchen Model">
+                </div>
+                <div class="model-info">
+                    <h3>Modular Kitchen Pack</h3>
+                    <p>20+ fully detailed modular kitchen designs with appliances.</p>
+                    <div class="model-actions">
+                        <a href="#" class="btn">Download</a>
+                        <span>850 MB</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="model-card">
+                <div class="model-img">
+                    <img src="https://images.unsplash.com/photo-1565538810643-b5bdb714032a?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Bathroom Model">
+                </div>
+                <div class="model-info">
+                    <h3>Luxury Bathroom Set</h3>
+                    <p>Premium bathroom fixtures, fittings and complete bathroom designs.</p>
+                    <div class="model-actions">
+                        <a href="#" class="btn">Download</a>
+                        <span>720 MB</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="model-card">
+                <div class="model-img">
+                    <img src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Apartment Model">
+                </div>
+                <div class="model-info">
+                    <h3>Apartment Building</h3>
+                    <p>Complete 5-story apartment building with detailed floor plans.</p>
+                    <div class="model-actions">
+                        <a href="#" class="btn">Download</a>
+                        <span>3.1 GB</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="plugins-section" id="plugins">
+        <div class="plugins-container">
+            <div class="section-title">
+                <h2 style="color: var(--accent);">Custom SketchUp Plugins</h2>
+            </div>
+            <div class="plugins-grid">
+                <div class="plugin-card">
+                    <div class="plugin-icon">
+                        <i>⚡</i>
+                    </div>
+                    <div class="plugin-info">
+                        <h3>Fast Roof Builder</h3>
+                        <p>Create complex roof designs in seconds with this powerful plugin. Supports multiple roof types and automatic framing.</p>
+                        <a href="#" class="btn">Download Plugin</a>
+                    </div>
+                </div>
+                
+                <div class="plugin-card">
+                    <div class="plugin-icon">
+                        <i>🌿</i>
+                    </div>
+                    <div class="plugin-info">
+                        <h3>Landscape Generator</h3>
+                        <p>Automatically generate realistic landscapes with terrain, plants, and water features based on your parameters.</p>
+                        <a href="#" class="btn">Download Plugin</a>
+                    </div>
+                </div>
+                
+                <div class="plugin-card">
+                    <div class="plugin-icon">
+                        <i>🪑</i>
+                    </div>
+                    <div class="plugin-info">
+                        <h3>Furniture Arranger</h3>
+                        <p>Smart furniture placement tool that suggests optimal arrangements based on room dimensions and style.</p>
+                        <a href="#" class="btn">Download Plugin</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="about-section" id="about">
+        <div class="about-img">
+            <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Abdul Design Studio">
+        </div>
+        <div class="about-content">
+            <h2>About ABDUL DESIGN STUDIO</h2>
+            <p>Founded in 2020, Abdul Design Studio specializes in creating high-quality 3D models and custom plugins for SketchUp users worldwide. Our mission is to empower designers with tools that enhance creativity and productivity.</p>
+            <p>With over 5 years of experience in 3D modeling and plugin development, we understand the needs of architects, interior designers, and 3D artists. All our models are carefully optimized for performance while maintaining exceptional detail.</p>
+            <a href="#contact" class="btn">Get In Touch</a>
+        </div>
+    </section>
+    
+    <footer id="contact">
+        <div class="footer-content">
+            <div class="footer-column">
+                <h3>ABDUL DESIGN STUDIO</h3>
+                <p>Premium SketchUp 3D Models & Custom Plugins for professionals and enthusiasts.</p>
+                <div class="social-links">
+                    <a href="#">FB</a>
+                    <a href="#">IG</a>
+                    <a href="#">YT</a>
+                    <a href="#">LI</a>
+                </div>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#models">3D Models</a></li>
+                    <li><a href="#plugins">Plugins</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Support</h3>
+                <ul>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">Documentation</a></li>
+                    <li><a href="#">Tutorials</a></li>
+                    <li><a href="#">Request Model</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Contact</h3>
+                <ul>
+                    <li>Email: contact@abduldesign.com</li>
+                    <li>Phone: +91 9876543210</li>
+                    <li>Address: New Delhi, India</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="copyright">
+            &copy; 2023 ABDUL DESIGN STUDIO. All Rights Reserved.
+        </div>
+    </footer>
+</body>
+</html>
