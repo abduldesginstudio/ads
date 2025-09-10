@@ -1,0 +1,70 @@
+[
+  {
+    "name": "Black Magic Material ADS",
+    "version": "1.1.17",
+    "description": "Black Magic is a SketchUp plugin by Abdul Almas that applies black color to selected faces instantly",
+    "download_url": "https://drive.google.com/uc?export=download&id=19qkF4ka78HFwCXf4nRLwNo1GQAhG2BaY",
+    "logo": "blackmagiclogo.png",
+    "logo_download_url": "https://drive.google.com/uc?export=download&id=16X9PH68Uy9xBdbAZBAFqU3GvRXmDffrQ"
+  },
+  {
+    "name": "ADS GRS MATERIALS",
+    "version": "1.6.2",
+    "description": "Easily apply gold, rose gold, and silver materials in SketchUp. Perfect for TV units, wall paneling, and decorative item",
+    "download_url": "https://drive.google.com/uc?export=download&id=1tCfKDXtCxtbOXojTsTEmW9kbuuPmGUoM"
+  },
+  {
+    "name": "MM to INCH @ADS",
+    "version": "1.1.50",
+    "description": "Convert easily in mm to inch & feet",
+    "download_url": "https://drive.google.com/uc?export=download&id=1O5FSF_8z2UGV1pQeSPI15un7dw4nIbzj",
+    "logo": "mmtoinch.png",
+    "logo_download_url": "https://drive.google.com/uc?export=download&id=12-597znZBRsFn6TG96x5xzHrVAJuNU-u"
+  },
+  {
+    "name": "ADS DC CALCULATOR",
+    "version": "1.1.06",
+    "description": "Its Very useful plugin for all users",
+    "download_url": "https://drive.google.com/uc?export=download&id=1vMW6lOlPnp6m1xP8sAqNGBCQpLiIWst8",
+    "logo": "dwclogo.png",
+    "logo_download_url": "https://drive.google.com/uc?export=download&id=10QhyFLi8sI7ZpMPVWUId7-tXPVvyPk0g"
+  },
+  {
+    "name": "ADS WNCO LIGHTS",
+    "version": "1.1.17",
+    "description": "**ADS WNCO LIGHTS** is a SketchUp plugin that generates emissive light materials in four colors: Warm, Natural, Cool, and Orange. Ideal for creating realistic profile and panel lighting in 3D models.",
+    "download_url": "https://drive.google.com/uc?export=download&id=1SurEDUD5OupmoBWLPJPrPlaelao3yE7N",
+    "logo": "WNCO_LOGO_ADS.png",
+    "logo_download_url": "https://drive.google.com/uc?export=download&id=1Tsj1qoDVisfgwMHm0dUFsRDYaDxU2ylY"
+  },
+  {
+    "name": "ADS_Drive_Download_Link_Generator",
+    "version": "1.1.16",
+    "description": "We can generate direct downlaod link form google drive sharing links",
+    "download_url": "https://drive.google.com/uc?export=download&id=1U1ioM1H7-GII_gxgZLQnGkpMQGRbVU6s",
+    "logo": "DRIVE_LINK_CONVERTER.png",
+    "logo_download_url": "https://drive.google.com/uc?export=download&id=13RgKE9sfQEzI7TmS_ANGakeQ17QH0IxC"
+  },
+  {
+    "name": "ADS FAN IMPORTER",
+    "version": "1.1.6",
+    "description": "FAN IMPORTER TO SKETCHUP",
+    "download_url": "https://drive.google.com/uc?export=download&id=1LPa8wYHG9UZe8gJhFduMybUquGAgQq6l",
+    "logo": "3dfanicon_logo.png",
+    "logo_download_url": "https://drive.google.com/uc?export=download&id=1M5WzPFbAoAdHlJArchu9ty0PcwdwOpUb"
+  },
+  {
+    "name": "ADS CGTIPS FILECR PINTEREST",
+    "version": "1.1.16",
+    "description": "We can open directly from Sketchup, Filecr, CG Tips, and Pinterest.",
+    "download_url": "https://drive.google.com/uc?export=download&id=1TotAXcxWTJ9N-kDWdWiAz6CiKszg8LT6",
+    "logo": "ADS_CGTIPS_FILECR_PINTEREST_LOGO.png"
+  },
+  {
+    "name": "ADS PDF VIEWER",
+    "version": "1.1.16",
+    "description": "We can open pdf directly from sketchup",
+    "download_url": "https://drive.google.com/uc?export=download&id=10HMR9AL4sko1v1T-f5UCcEnz5kMPhdw0",
+    "logo": "ADS_PDF_VIEWER_LOGO.png"
+  }
+]
