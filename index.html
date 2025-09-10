@@ -3,625 +3,579 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ABDUL DESIGN STUDIO | Premium SketchUp 3D Models & Plugins</title>
+    <title>ADS Plugin Store - Premium SketchUp Plugins</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        :root {
-            --primary: #2a4365;
-            --secondary: #f6ad55;
-            --dark: #1a202c;
-            --light: #f7fafc;
-            --accent: #ecc94b;
-        }
-        
         * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Inter', sans-serif;
         }
         
-        body {
-            background-color: var(--light);
-            color: var(--dark);
-            overflow-x: hidden;
+        .glass-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
         }
         
-        header {
-            background: linear-gradient(135deg, var(--primary), var(--dark));
-            color: white;
-            padding: 1rem 2rem;
-            position: fixed;
-            width: 100%;
-            z-index: 100;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        .glass-card-dark {
+            background: rgba(31, 41, 55, 0.8);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
         }
         
-        nav {
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        
+        .gradient-text {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .hover-lift {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .hover-lift:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+        
+        .floating-animation {
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+        
+        .pulse-glow {
+            animation: pulse-glow 2s infinite;
+        }
+        
+        @keyframes pulse-glow {
+            0%, 100% { box-shadow: 0 0 20px rgba(102, 126, 234, 0.4); }
+            50% { box-shadow: 0 0 40px rgba(102, 126, 234, 0.8); }
+        }
+        
+        .scroll-reveal {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.6s ease-out;
+        }
+        
+        .scroll-reveal.revealed {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .logo-container {
+            width: 80px;
+            height: 80px;
+            border-radius: 16px;
+            overflow: hidden;
+            background: linear-gradient(135deg, #f3f4f6, #e5e7eb);
             display: flex;
-            justify-content: space-between;
             align-items: center;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        
-        .logo {
-            font-size: 1.8rem;
-            font-weight: 700;
-            color: var(--accent);
-            display: flex;
-            align-items: center;
-        }
-        
-        .logo span {
-            color: white;
-            margin-left: 0.5rem;
-        }
-        
-        .nav-links {
-            display: flex;
-            gap: 2rem;
-        }
-        
-        .nav-links a {
-            color: white;
-            text-decoration: none;
-            font-weight: 500;
-            transition: all 0.3s ease;
-            padding: 0.5rem 1rem;
-            border-radius: 4px;
-        }
-        
-        .nav-links a:hover {
-            background-color: rgba(255, 255, 255, 0.1);
-            color: var(--accent);
-        }
-        
-        .hero {
-            height: 100vh;
-            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://scontent.fvga2-2.fna.fbcdn.net/v/t39.30808-6/339315203_588462386674640_2619479133105466087_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=2285d6&_nc_ohc=7AF2cxmFVKkQ7kNvwFmhNMa&_nc_oc=AdmWWV8QLJDcW_5omy_NZrBR8G8YHKRAMsZqTCo13hdp9P3S6kobYv-k1Tj-ucIYKdLYSKIYm3kSONHtOzRMzxnd&_nc_zt=23&_nc_ht=scontent.fvga2-2.fna&_nc_gid=u9P5B2SHuUIkFYr-Y3FcgQ&oh=00_AfR1dgqaU2Fs41hu7CFXy0kMKsAAJIj2gc90NJ32q1UzOQ&oe=688EE11D');
-            background-size: cover;
-            background-position: center;
-            display: flex;
-            flex-direction: column;
             justify-content: center;
-            align-items: center;
-            text-align: center;
-            color: white;
-            padding: 0 2rem;
-        }
-        
-        .hero h1 {
-            font-size: 3.5rem;
-            margin-bottom: 1rem;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-        }
-        
-        .hero p {
-            font-size: 1.2rem;
-            max-width: 700px;
-            margin-bottom: 2rem;
-            line-height: 1.6;
-        }
-        
-        .btn {
-            display: inline-block;
-            background-color: var(--secondary);
-            color: var(--dark);
-            padding: 0.8rem 2rem;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            border: none;
-            cursor: pointer;
-            font-size: 1rem;
-        }
-        
-        .btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-        }
-        
-        .btn-outline {
-            background-color: transparent;
-            border: 2px solid var(--secondary);
-            color: var(--secondary);
-            margin-left: 1rem;
-        }
-        
-        .btn-outline:hover {
-            background-color: var(--secondary);
-            color: var(--dark);
-        }
-        
-        .models-section {
-            padding: 5rem 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        
-        .section-title {
-            text-align: center;
-            margin-bottom: 3rem;
             position: relative;
         }
         
-        .section-title h2 {
-            font-size: 2.5rem;
-            color: var(--primary);
-            display: inline-block;
-        }
-        
-        .section-title h2::after {
+        .logo-container::before {
             content: '';
             position: absolute;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80px;
-            height: 4px;
-            background-color: var(--secondary);
-            border-radius: 2px;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(118, 75, 162, 0.1));
+            opacity: 0;
+            transition: opacity 0.3s ease;
         }
         
-        .models-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 2rem;
+        .logo-container:hover::before {
+            opacity: 1;
         }
         
-        .model-card {
-            background-color: white;
+        .logo-container img {
+            width: 60px;
+            height: 60px;
+            object-fit: contain;
             border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            transition: all 0.3s ease;
+            transition: transform 0.3s ease;
         }
         
-        .model-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
-        }
-        
-        .model-img {
-            height: 200px;
-            overflow: hidden;
-        }
-        
-        .model-img img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s ease;
-        }
-        
-        .model-card:hover .model-img img {
+        .logo-container:hover img {
             transform: scale(1.1);
         }
         
-        .model-info {
-            padding: 1.5rem;
-        }
-        
-        .model-info h3 {
-            font-size: 1.3rem;
-            margin-bottom: 0.5rem;
-            color: var(--primary);
-        }
-        
-        .model-info p {
-            color: #666;
-            margin-bottom: 1rem;
-            line-height: 1.5;
-        }
-        
-        .model-actions {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .plugins-section {
-            background-color: var(--primary);
-            padding: 5rem 2rem;
-            color: white;
-        }
-        
-        .plugins-container {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        
-        .plugins-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-        
-        .plugin-card {
-            background-color: rgba(255, 255, 255, 0.1);
-            border-radius: 8px;
-            overflow: hidden;
+        .download-btn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             transition: all 0.3s ease;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-        }
-        
-        .plugin-card:hover {
-            transform: translateY(-10px);
-            background-color: rgba(255, 255, 255, 0.2);
-        }
-        
-        .plugin-icon {
-            background-color: var(--secondary);
-            color: var(--dark);
-            font-size: 2rem;
-            padding: 1.5rem;
-            text-align: center;
-        }
-        
-        .plugin-info {
-            padding: 1.5rem;
-        }
-        
-        .plugin-info h3 {
-            font-size: 1.3rem;
-            margin-bottom: 0.5rem;
-            color: var(--accent);
-        }
-        
-        .plugin-info p {
-            margin-bottom: 1rem;
-            line-height: 1.5;
-            opacity: 0.9;
-        }
-        
-        .about-section {
-            padding: 5rem 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            align-items: center;
-            gap: 3rem;
-        }
-        
-        .about-img {
-            flex: 1;
-            border-radius: 8px;
+            position: relative;
             overflow: hidden;
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
         }
         
-        .about-img img {
+        .download-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
             width: 100%;
-            height: auto;
-            display: block;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s ease;
         }
         
-        .about-content {
-            flex: 1;
+        .download-btn:hover::before {
+            left: 100%;
         }
         
-        .about-content h2 {
+        .download-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.4);
+        }
+        
+        .stats-counter {
             font-size: 2.5rem;
-            color: var(--primary);
-            margin-bottom: 1.5rem;
+            font-weight: 800;
+            color: #667eea;
         }
         
-        .about-content p {
-            color: #666;
-            line-height: 1.6;
-            margin-bottom: 1.5rem;
+        .hero-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+            position: relative;
+            overflow: hidden;
         }
         
-        footer {
-            background-color: var(--dark);
-            color: white;
-            padding: 3rem 2rem;
-            text-align: center;
+        .hero-bg::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="white" opacity="0.1"/><circle cx="75" cy="75" r="1" fill="white" opacity="0.1"/><circle cx="50" cy="10" r="1" fill="white" opacity="0.1"/><circle cx="10" cy="90" r="1" fill="white" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+            opacity: 0.3;
         }
         
-        .footer-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 2rem;
-            text-align: left;
-        }
-        
-        .footer-column h3 {
-            font-size: 1.3rem;
-            margin-bottom: 1.5rem;
-            color: var(--accent);
-        }
-        
-        .footer-column ul {
-            list-style: none;
-        }
-        
-        .footer-column ul li {
-            margin-bottom: 0.8rem;
-        }
-        
-        .footer-column ul li a {
-            color: #ccc;
-            text-decoration: none;
-            transition: all 0.3s ease;
-        }
-        
-        .footer-column ul li a:hover {
-            color: var(--secondary);
-            padding-left: 5px;
-        }
-        
-        .social-links {
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            border-radius: 16px;
             display: flex;
-            gap: 1rem;
-            margin-top: 1rem;
-        }
-        
-        .social-links a {
-            display: inline-flex;
             align-items: center;
             justify-content: center;
-            width: 40px;
-            height: 40px;
-            background-color: rgba(255, 255, 255, 0.1);
-            border-radius: 50%;
             color: white;
-            transition: all 0.3s ease;
-        }
-        
-        .social-links a:hover {
-            background-color: var(--secondary);
-            color: var(--dark);
-            transform: translateY(-3px);
-        }
-        
-        .copyright {
-            margin-top: 3rem;
-            padding-top: 1.5rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            color: #aaa;
-            font-size: 0.9rem;
-        }
-        
-        @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-            }
-            
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-            
-            .about-section {
-                flex-direction: column;
-            }
-            
-            .about-img, .about-content {
-                flex: none;
-                width: 100%;
-            }
+            font-size: 24px;
+            margin-bottom: 1rem;
         }
     </style>
 </head>
-<body>
-    <header>
-        <nav>
-            <div class="logo">
-                <span>ABDUL</span> DESIGN STUDIO
+<body class="bg-gray-50 min-h-screen">
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 right-0 z-50 glass-card">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center space-x-3">
+                    <div class="w-10 h-10 bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg flex items-center justify-center">
+                        <i class="fas fa-plug text-white text-lg"></i>
+                    </div>
+                    <span class="text-xl font-bold gradient-text">ADS Plugin Store</span>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#home" class="text-gray-700 hover:text-blue-600 transition-colors">Home</a>
+                    <a href="#plugins" class="text-gray-700 hover:text-blue-600 transition-colors">Plugins</a>
+                    <a href="#about" class="text-gray-700 hover:text-blue-600 transition-colors">About</a>
+                    <a href="#contact" class="text-gray-700 hover:text-blue-600 transition-colors">Contact</a>
+                </div>
+                <button class="md:hidden">
+                    <i class="fas fa-bars text-gray-700"></i>
+                </button>
             </div>
-            <div class="nav-links">
-                <a href="#models">3D Models</a>
-                <a href="#plugins">Plugins</a>
-                <a href="#about">About</a>
-                <a href="#contact">Contact</a>
-            </div>
-        </nav>
-    </header>
-    
-    <section class="hero">
-        <h1>Premium SketchUp 3D Models & Plugins</h1>
-        <p>Enhance your 3D design workflow with our high-quality SketchUp models and custom plugins created by Abdul Design Studio. Download ready-to-use assets for your next project.</p>
-        <div>
-            <a href="#models" class="btn">Explore Models</a>
-            <a href="#plugins" class="btn btn-outline">Discover Plugins</a>
         </div>
-    </section>
-    
-    <section class="models-section" id="models">
-        <div class="section-title">
-            <h2>Featured 3D Models</h2>
-        </div>
-        <div class="models-grid">
-            <div class="model-card">
-                <div class="model-img">
-                    <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Modern House Model">
-                </div>
-                <div class="model-info">
-                    <h3>Modern Villa Collection</h3>
-                    <p>Complete set of modern villa designs with detailed interiors and landscaping.</p>
-                    <div class="model-actions">
-                        <a href="#" class="btn">Download</a>
-                        <span>2.4 GB</span>
-                    </div>
-                </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-bg pt-20 pb-16 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+            <div class="floating-animation">
+                <h1 class="text-5xl md:text-7xl font-bold text-white mb-6 text-balance">
+                    Premium SketchUp
+                    <span class="block gradient-text bg-gradient-to-r from-yellow-300 to-pink-300 bg-clip-text text-transparent">
+                        Plugins Store
+                    </span>
+                </h1>
             </div>
-            
-            <div class="model-card">
-                <div class="model-img">
-                    <img src="https://images.unsplash.com/photo-1493809842364-78817add7ffb?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Furniture Model">
-                </div>
-                <div class="model-info">
-                    <h3>Luxury Furniture Pack</h3>
-                    <p>50+ high-end furniture models for living rooms, bedrooms and offices.</p>
-                    <div class="model-actions">
-                        <a href="#" class="btn">Download</a>
-                        <span>1.2 GB</span>
+            <p class="text-xl md:text-2xl text-white/90 mb-8 max-w-3xl mx-auto text-pretty">
+                Discover powerful plugins crafted by Abdul Almas to enhance your SketchUp workflow
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                <button class="download-btn px-8 py-4 text-white font-semibold rounded-xl pulse-glow">
+                    <i class="fas fa-download mr-2"></i>
+                    Explore Plugins
+                </button>
+                <div class="flex items-center space-x-4 text-white/80">
+                    <div class="text-center">
+                        <div class="stats-counter text-white">9</div>
+                        <div class="text-sm">Premium Plugins</div>
                     </div>
-                </div>
-            </div>
-            
-            <div class="model-card">
-                <div class="model-img">
-                    <img src="https://images.unsplash.com/photo-1554469384-e58fac16e23a?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Office Model">
-                </div>
-                <div class="model-info">
-                    <h3>Corporate Office Set</h3>
-                    <p>Complete modern office setup with workstations, meeting rooms and lounge.</p>
-                    <div class="model-actions">
-                        <a href="#" class="btn">Download</a>
-                        <span>1.8 GB</span>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="model-card">
-                <div class="model-img">
-                    <img src="https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Kitchen Model">
-                </div>
-                <div class="model-info">
-                    <h3>Modular Kitchen Pack</h3>
-                    <p>20+ fully detailed modular kitchen designs with appliances.</p>
-                    <div class="model-actions">
-                        <a href="#" class="btn">Download</a>
-                        <span>850 MB</span>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="model-card">
-                <div class="model-img">
-                    <img src="https://images.unsplash.com/photo-1565538810643-b5bdb714032a?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Bathroom Model">
-                </div>
-                <div class="model-info">
-                    <h3>Luxury Bathroom Set</h3>
-                    <p>Premium bathroom fixtures, fittings and complete bathroom designs.</p>
-                    <div class="model-actions">
-                        <a href="#" class="btn">Download</a>
-                        <span>720 MB</span>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="model-card">
-                <div class="model-img">
-                    <img src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Apartment Model">
-                </div>
-                <div class="model-info">
-                    <h3>Apartment Building</h3>
-                    <p>Complete 5-story apartment building with detailed floor plans.</p>
-                    <div class="model-actions">
-                        <a href="#" class="btn">Download</a>
-                        <span>3.1 GB</span>
+                    <div class="w-px h-12 bg-white/30"></div>
+                    <div class="text-center">
+                        <div class="stats-counter text-white">1000+</div>
+                        <div class="text-sm">Downloads</div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    
-    <section class="plugins-section" id="plugins">
-        <div class="plugins-container">
-            <div class="section-title">
-                <h2 style="color: var(--accent);">Custom SketchUp Plugins</h2>
+
+    <!-- Features Section -->
+    <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">Why Choose ADS Plugins?</h2>
+                <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+                    Professional-grade plugins designed to streamline your SketchUp workflow
+                </p>
             </div>
-            <div class="plugins-grid">
-                <div class="plugin-card">
-                    <div class="plugin-icon">
-                        <i>⚡</i>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="text-center scroll-reveal">
+                    <div class="feature-icon mx-auto">
+                        <i class="fas fa-rocket"></i>
                     </div>
-                    <div class="plugin-info">
-                        <h3>Fast Roof Builder</h3>
-                        <p>Create complex roof designs in seconds with this powerful plugin. Supports multiple roof types and automatic framing.</p>
-                        <a href="#" class="btn">Download Plugin</a>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-3">High Performance</h3>
+                    <p class="text-gray-600">Optimized for speed and efficiency in your SketchUp projects</p>
+                </div>
+                <div class="text-center scroll-reveal">
+                    <div class="feature-icon mx-auto">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-3">Reliable & Tested</h3>
+                    <p class="text-gray-600">Thoroughly tested plugins with regular updates and support</p>
+                </div>
+                <div class="text-center scroll-reveal">
+                    <div class="feature-icon mx-auto">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-3">Community Driven</h3>
+                    <p class="text-gray-600">Built based on real user feedback and industry needs</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Plugins Grid -->
+    <section id="plugins" class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">Our Plugin Collection</h2>
+                <p class="text-xl text-gray-600">Powerful tools to enhance your SketchUp experience</p>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8" id="plugins-grid">
+                <!-- Plugins will be dynamically inserted here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div class="scroll-reveal">
+                    <h2 class="text-4xl font-bold text-gray-900 mb-6">About the Developer</h2>
+                    <p class="text-lg text-gray-600 mb-6">
+                        Hi, I'm <strong>Abdul Almas</strong>, a passionate SketchUp plugin developer dedicated to creating tools that make your design workflow more efficient and enjoyable.
+                    </p>
+                    <p class="text-lg text-gray-600 mb-8">
+                        With years of experience in 3D modeling and software development, I understand the challenges designers face and create solutions that truly make a difference.
+                    </p>
+                    <div class="flex flex-wrap gap-4">
+                        <a href="https://instagram.com/almas_designer_" target="_blank" class="flex items-center space-x-2 bg-pink-100 text-pink-700 px-4 py-2 rounded-lg hover:bg-pink-200 transition-colors">
+                            <i class="fab fa-instagram"></i>
+                            <span>@almas_designer_</span>
+                        </a>
+                        <a href="https://3dwarehouse.sketchup.com/by/almas_designer_" target="_blank" class="flex items-center space-x-2 bg-green-100 text-green-700 px-4 py-2 rounded-lg hover:bg-green-200 transition-colors">
+                            <i class="fas fa-cube"></i>
+                            <span>3D Warehouse</span>
+                        </a>
                     </div>
                 </div>
-                
-                <div class="plugin-card">
-                    <div class="plugin-icon">
-                        <i>🌿</i>
-                    </div>
-                    <div class="plugin-info">
-                        <h3>Landscape Generator</h3>
-                        <p>Automatically generate realistic landscapes with terrain, plants, and water features based on your parameters.</p>
-                        <a href="#" class="btn">Download Plugin</a>
-                    </div>
-                </div>
-                
-                <div class="plugin-card">
-                    <div class="plugin-icon">
-                        <i>🪑</i>
-                    </div>
-                    <div class="plugin-info">
-                        <h3>Furniture Arranger</h3>
-                        <p>Smart furniture placement tool that suggests optimal arrangements based on room dimensions and style.</p>
-                        <a href="#" class="btn">Download Plugin</a>
+                <div class="scroll-reveal">
+                    <div class="glass-card-dark rounded-2xl p-8 text-white">
+                        <h3 class="text-2xl font-bold mb-6">Developer Stats</h3>
+                        <div class="space-y-4">
+                            <div class="flex justify-between items-center">
+                                <span>Plugins Created</span>
+                                <span class="font-bold text-2xl text-blue-400">9+</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span>Total Downloads</span>
+                                <span class="font-bold text-2xl text-green-400">1000+</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span>Years Experience</span>
+                                <span class="font-bold text-2xl text-purple-400">5+</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span>User Rating</span>
+                                <span class="font-bold text-2xl text-yellow-400">★★★★★</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    
-    <section class="about-section" id="about">
-        <div class="about-img">
-            <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Abdul Design Studio">
-        </div>
-        <div class="about-content">
-            <h2>About ABDUL DESIGN STUDIO</h2>
-            <p>Founded in 2020, Abdul Design Studio specializes in creating high-quality 3D models and custom plugins for SketchUp users worldwide. Our mission is to empower designers with tools that enhance creativity and productivity.</p>
-            <p>With over 5 years of experience in 3D modeling and plugin development, we understand the needs of architects, interior designers, and 3D artists. All our models are carefully optimized for performance while maintaining exceptional detail.</p>
-            <a href="#contact" class="btn">Get In Touch</a>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 gradient-bg">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-4xl font-bold text-white mb-6">Get in Touch</h2>
+            <p class="text-xl text-white/90 mb-8">
+                Have questions or need custom plugin development? Let's connect!
+            </p>
+            <div class="grid md:grid-cols-2 gap-6 max-w-2xl mx-auto">
+                <a href="https://instagram.com/almas_designer_" target="_blank" class="glass-card rounded-xl p-6 text-white hover-lift">
+                    <i class="fab fa-instagram text-3xl mb-4"></i>
+                    <h3 class="text-lg font-semibold mb-2">Follow Me</h3>
+                    <p class="text-white/80">@almas_designer_</p>
+                </a>
+                <a href="https://3dwarehouse.sketchup.com/by/almas_designer_" target="_blank" class="glass-card rounded-xl p-6 text-white hover-lift">
+                    <i class="fas fa-cube text-3xl mb-4"></i>
+                    <h3 class="text-lg font-semibold mb-2">3D Models</h3>
+                    <p class="text-white/80">3D Warehouse</p>
+                </a>
+            </div>
         </div>
     </section>
-    
-    <footer id="contact">
-        <div class="footer-content">
-            <div class="footer-column">
-                <h3>ABDUL DESIGN STUDIO</h3>
-                <p>Premium SketchUp 3D Models & Custom Plugins for professionals and enthusiasts.</p>
-                <div class="social-links">
-                    <a href="#">FB</a>
-                    <a href="#">IG</a>
-                    <a href="#">YT</a>
-                    <a href="#">LI</a>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <div class="flex items-center justify-center space-x-3 mb-4">
+                    <div class="w-10 h-10 bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg flex items-center justify-center">
+                        <i class="fas fa-plug text-white text-lg"></i>
+                    </div>
+                    <span class="text-2xl font-bold">ADS Plugin Store</span>
+                </div>
+                <p class="text-gray-400 mb-6">Premium SketchUp plugins by Abdul Almas</p>
+                <div class="flex justify-center space-x-6 mb-8">
+                    <a href="https://instagram.com/almas_designer_" target="_blank" class="text-gray-400 hover:text-white transition-colors">
+                        <i class="fab fa-instagram text-xl"></i>
+                    </a>
+                    <a href="https://3dwarehouse.sketchup.com/by/almas_designer_" target="_blank" class="text-gray-400 hover:text-white transition-colors">
+                        <i class="fas fa-cube text-xl"></i>
+                    </a>
+                </div>
+                <div class="border-t border-gray-800 pt-8">
+                    <p class="text-gray-400">
+                        © 2024 ADS Plugin Store. All rights reserved. | Developed by Abdul Almas
+                    </p>
                 </div>
             </div>
-            
-            <div class="footer-column">
-                <h3>Quick Links</h3>
-                <ul>
-                    <li><a href="#models">3D Models</a></li>
-                    <li><a href="#plugins">Plugins</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </div>
-            
-            <div class="footer-column">
-                <h3>Support</h3>
-                <ul>
-                    <li><a href="#">FAQ</a></li>
-                    <li><a href="#">Documentation</a></li>
-                    <li><a href="#">Tutorials</a></li>
-                    <li><a href="#">Request Model</a></li>
-                </ul>
-            </div>
-            
-            <div class="footer-column">
-                <h3>Contact</h3>
-                <ul>
-                    <li>Email: contact@abduldesign.com</li>
-                    <li>Phone: +91 9876543210</li>
-                    <li>Address: New Delhi, India</li>
-                </ul>
-            </div>
-        </div>
-        
-        <div class="copyright">
-            &copy; 2023 ABDUL DESIGN STUDIO. All Rights Reserved.
         </div>
     </footer>
+
+    <script>
+        // Plugin data
+        let plugins = [];
+        
+        // GitHub API configuration
+        const GITHUB_TOKEN = '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';
+        const GITHUB_REPO = 'abduldesignstudio/ads_plugin_store';
+        const FILE_PATH = 'ADSPLUGINDATA.json';
+        
+        // Fetch plugin data from GitHub
+        async function fetchPluginData() {
+            try {
+                console.log('[v0] Fetching plugin data from GitHub...');
+                const response = await fetch(`https://api.github.com/repos/${GITHUB_REPO}/contents/${FILE_PATH}`, {
+                    headers: {
+                        'Authorization': `token ${GITHUB_TOKEN}`,
+                        'Accept': 'application/vnd.github.v3+json'
+                    }
+                });
+                
+                if (!response.ok) {
+                    throw new Error(`GitHub API error: ${response.status}`);
+                }
+                
+                const data = await response.json();
+                const content = atob(data.content); // Decode base64 content
+                plugins = JSON.parse(content);
+                console.log('[v0] Successfully loaded plugins:', plugins.length);
+                
+                // Render plugins after data is loaded
+                renderPlugins();
+                
+            } catch (error) {
+                console.error('[v0] Error fetching plugin data:', error);
+                // Fallback to show error message
+                showErrorMessage();
+            }
+        }
+        
+        // Show error message if GitHub fetch fails
+        function showErrorMessage() {
+            const pluginsGrid = document.getElementById('plugins-grid');
+            pluginsGrid.innerHTML = `
+                <div class="col-span-full text-center py-12">
+                    <div class="glass-card rounded-2xl p-8">
+                        <i class="fas fa-exclamation-triangle text-4xl text-yellow-500 mb-4"></i>
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Unable to Load Plugins</h3>
+                        <p class="text-gray-600">Please check your internet connection and try again.</p>
+                        <button onclick="fetchPluginData()" class="download-btn px-6 py-2 text-white font-semibold rounded-lg mt-4">
+                            <i class="fas fa-refresh mr-2"></i>Retry
+                        </button>
+                    </div>
+                </div>
+            `;
+        }
+
+        // Render plugins
+        function renderPlugins() {
+            const pluginsGrid = document.getElementById('plugins-grid');
+            
+            if (!plugins || plugins.length === 0) {
+                showErrorMessage();
+                return;
+            }
+            
+            // Clear existing content
+            pluginsGrid.innerHTML = '';
+            
+            plugins.forEach((plugin, index) => {
+                const pluginCard = document.createElement('div');
+                pluginCard.className = 'glass-card rounded-2xl p-6 hover-lift scroll-reveal';
+                pluginCard.style.animationDelay = `${index * 0.1}s`;
+                
+                const logoUrl = plugin.logo_download_url || `https://via.placeholder.com/80x80/667eea/ffffff?text=${plugin.name.charAt(0)}`;
+                
+                pluginCard.innerHTML = `
+                    <div class="flex items-start space-x-4 mb-4">
+                        <div class="logo-container flex-shrink-0">
+                            <img src="${logoUrl}" alt="${plugin.name}" onerror="this.src='https://via.placeholder.com/80x80/667eea/ffffff?text=${plugin.name.charAt(0)}'">
+                        </div>
+                        <div class="flex-1 min-w-0">
+                            <h3 class="text-xl font-bold text-gray-900 mb-1 text-balance">${plugin.name}</h3>
+                            <span class="inline-block bg-blue-100 text-blue-800 text-xs font-semibold px-2 py-1 rounded-full">
+                                v${plugin.version}
+                            </span>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-6 text-pretty leading-relaxed">${plugin.description}</p>
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center space-x-2 text-sm text-gray-500">
+                            <i class="fas fa-download"></i>
+                            <span>Free Download</span>
+                        </div>
+                        <a href="${plugin.download_url}" 
+                           class="download-btn px-6 py-2 text-white font-semibold rounded-lg text-sm inline-flex items-center space-x-2"
+                           target="_blank">
+                            <i class="fas fa-download"></i>
+                            <span>Download</span>
+                        </a>
+                    </div>
+                `;
+                
+                pluginsGrid.appendChild(pluginCard);
+            });
+            
+            // Re-trigger scroll reveal for new elements
+            setTimeout(() => {
+                revealOnScroll();
+            }, 100);
+        }
+
+        // Scroll reveal animation
+        function revealOnScroll() {
+            const reveals = document.querySelectorAll('.scroll-reveal');
+            
+            reveals.forEach(reveal => {
+                const windowHeight = window.innerHeight;
+                const elementTop = reveal.getBoundingClientRect().top;
+                const elementVisible = 150;
+                
+                if (elementTop < windowHeight - elementVisible) {
+                    reveal.classList.add('revealed');
+                }
+            });
+        }
+
+        // Smooth scrolling for navigation links
+        function setupSmoothScrolling() {
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+        }
+
+        // Counter animation
+        function animateCounters() {
+            const counters = document.querySelectorAll('.stats-counter');
+            counters.forEach(counter => {
+                const target = parseInt(counter.textContent.replace(/\D/g, ''));
+                let current = 0;
+                const increment = target / 100;
+                const timer = setInterval(() => {
+                    current += increment;
+                    if (current >= target) {
+                        counter.textContent = counter.textContent.includes('+') ? target + '+' : target;
+                        clearInterval(timer);
+                    } else {
+                        counter.textContent = Math.floor(current) + (counter.textContent.includes('+') ? '+' : '');
+                    }
+                }, 20);
+            });
+        }
+
+        // Initialize everything when DOM is loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            // Fetch plugin data from GitHub first
+            fetchPluginData();
+            
+            setupSmoothScrolling();
+            revealOnScroll();
+            
+            // Animate counters when they come into view
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        animateCounters();
+                        observer.unobserve(entry.target);
+                    }
+                });
+            });
+            
+            document.querySelectorAll('.stats-counter').forEach(counter => {
+                observer.observe(counter);
+            });
+        });
+
+        // Add scroll event listener
+        window.addEventListener('scroll', revealOnScroll);
+
+        // Add loading animation
+        window.addEventListener('load', function() {
+            document.body.classList.add('loaded');
+        });
+    </script>
 </body>
 </html>
