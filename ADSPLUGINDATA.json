@@ -11,7 +11,9 @@
     "name": "ADS GRS MATERIALS",
     "version": "1.6.2",
     "description": "Easily apply gold, rose gold, and silver materials in SketchUp. Perfect for TV units, wall paneling, and decorative item",
-    "download_url": "https://drive.google.com/uc?export=download&id=1tCfKDXtCxtbOXojTsTEmW9kbuuPmGUoM"
+    "download_url": "https://drive.google.com/uc?export=download&id=1tCfKDXtCxtbOXojTsTEmW9kbuuPmGUoM",
+    "logo": "grslogo.png",
+    "logo_download_url": "https://drive.google.com/uc?export=download&id=xxxxxx" 
   },
   {
     "name": "MM to INCH @ADS",
@@ -32,7 +34,7 @@
   {
     "name": "ADS WNCO LIGHTS",
     "version": "1.1.17",
-    "description": "**ADS WNCO LIGHTS** is a SketchUp plugin that generates emissive light materials in four colors: Warm, Natural, Cool, and Orange. Ideal for creating realistic profile and panel lighting in 3D models.",
+    "description": "ADS WNCO LIGHTS is a SketchUp plugin that generates emissive light materials in four colors: Warm, Natural, Cool, and Orange. Ideal for creating realistic profile and panel lighting in 3D models.",
     "download_url": "https://drive.google.com/uc?export=download&id=1SurEDUD5OupmoBWLPJPrPlaelao3yE7N",
     "logo": "WNCO_LOGO_ADS.png",
     "logo_download_url": "https://drive.google.com/uc?export=download&id=1Tsj1qoDVisfgwMHm0dUFsRDYaDxU2ylY"
@@ -58,13 +60,15 @@
     "version": "1.1.16",
     "description": "We can open directly from Sketchup, Filecr, CG Tips, and Pinterest.",
     "download_url": "https://drive.google.com/uc?export=download&id=1TotAXcxWTJ9N-kDWdWiAz6CiKszg8LT6",
-    "logo": "ADS_CGTIPS_FILECR_PINTEREST_LOGO.png"
+    "logo": "ADS_CGTIPS_FILECR_PINTEREST_LOGO.png",
+    "logo_download_url": "https://drive.google.com/uc?export=download&id=xxxxxx"
   },
   {
     "name": "ADS PDF VIEWER",
     "version": "1.1.16",
     "description": "We can open pdf directly from sketchup",
     "download_url": "https://drive.google.com/uc?export=download&id=10HMR9AL4sko1v1T-f5UCcEnz5kMPhdw0",
-    "logo": "ADS_PDF_VIEWER_LOGO.png"
+    "logo": "ADS_PDF_VIEWER_LOGO.png",
+    "logo_download_url": "https://drive.google.com/uc?export=download&id=xxxxxx"
   }
 ]
